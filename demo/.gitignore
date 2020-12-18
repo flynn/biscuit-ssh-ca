@@ -1,0 +1,3 @@
+sshd/principals/*
+!sshd/principals/.gitkeep
+sshd/ca_key.pub

@@ -1,0 +1,8 @@
+Port 22
+
+TrustedUserCAKeys=/etc/ssh/ca_key.pub
+AuthorizedPrincipalsFile=/etc/ssh/principals/%u
+PasswordAuthentication no
+AllowTcpForwarding yes
+GatewayPorts yes
+PermitRootLogin yes

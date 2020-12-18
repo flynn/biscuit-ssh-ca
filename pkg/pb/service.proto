@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package flynn.api.v1;
+
+option go_package = ".;pb";
+
+service HallowGCP {
+  rpc NewCertificate(NewCertificateRequest) returns (NewCertificateResponse) {};
+  rpc CAPublicKey(CAPublicKeyRequest) returns (CAPublicKeyResponse) {};
+}
+
+message NewCertificateRequest {
+  bytes public_key = 1;
+  repeated string principals = 2;
+}
+message NewCertificateResponse { bytes certificate = 1; }
+
+message CAPublicKeyRequest {}
+message CAPublicKeyResponse {
+  bytes ca_public_key = 1;
+  string key_type = 2;
+};
